@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:signature="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms"
+             mc:Ignorable="d"
+             x:Class="WeatherApp.Train.Train"
+             Title="Training">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label 
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Welcome to Training&#x0a;Please write the word on right-hand side"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+                <Image x:Name="SignImage"
+                       Source="word.jpg"
+                       Grid.Row="0"
+                       Grid.Column="1">
+                    
+                </Image>
+
+                
+            </Grid>
+            </StackLayout>
+            <StackLayout
+                x:Name="Signlayout" HorizontalOptions="Center">
+                <Label Text="Please write word here"
+                       HorizontalOptions="Center"/>
+                <signature:SignaturePadView StrokeColor="Black"
+                                        StrokeWidth="3"
+                                        BackgroundImage="sample.JPG"
+                                        BackgroundImageAspect="AspectFit"   
+                                        x:Name="sign"
+                                        SignatureLineColor="Transparent"
+                                        BackgroundColor="Transparent"
+                                        PromptText="Write"
+                                        PromptTextColor="Black"
+                                        CaptionText=" "
+                                        HorizontalOptions="EndAndExpand"
+                                            >
+
+            </signature:SignaturePadView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
